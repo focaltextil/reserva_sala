@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Sala</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+
+    <div id="spinner" style="display: none;">⏳ Enviando...</div>
+
+
+    <h1>Reservar Sala</h1>
+
+    <form id="form">
+
+        <label for="sala">Sala</label>
+
+        <select id="sala">
+
+            <option value="Sala De Reunião">Sala De Reunião</option>
+
+            <option value="Sala De Treinamento">Sala De Treinamento</option>
+
+        </select>
+
+        <label for="nome">Nome:</label>
+
+        <input type="nome" id="nome" required>
+
+        <label for="data">Escolha o Dia:</label>
+
+        <input type="date" id="data" required>
+        
+        <label for="hora-inicio">Hora de início:</label>
+
+        <select id="hora-inicio" required>
+
+        </select>
+
+        <label for="hora-fim">Hora de fim:</label>
+
+        <select id="hora-fim" required>
+
+        </select>
+
+        <button type="submit" id="btn_agendar">Agendar</button>
+
+    </form>
+
+    <div id="mensagem"></div>
+
+    <div id="horarios-ocupados">
+
+        <h2>Horários Reservados:</h2>
+
+        <ul id="lista-horarios"></ul>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

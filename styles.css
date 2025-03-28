@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+#horarios-ocupados {
+    margin-top: 20px;
+}
+
+#horarios-ocupados ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#mensagem {
+    color: red;
+    font-weight: bold;
+}
+
+#spinner {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 10px;
+}
+

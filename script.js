@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        // Garante que a lista tenha pelo menos os horários padrões disponíveis
         if (horariosRestantes.length === 0) {
             horariosRestantes = gerarHorariosDisponiveis();
         }
@@ -179,20 +178,19 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify(reserva)
         })
             .then(response => {
-                // Verifica se a resposta foi bem-sucedida (status 2xx)
+      
                 if (!response.ok) {
-                    // Tenta pegar o corpo da resposta para detalhes do erro
+          
                     return response.json().then(errorData => {
                         console.error("❌ Erro na resposta da API:", errorData);
                         throw new Error(errorData.error || `Erro HTTP: ${response.status}`);
                     });
                 }
                 
-                // Verifica se há conteúdo na resposta e a converte em JSON
                 return response.json();
             })
             .then(data => {
-                // Verifica se a resposta contém a mensagem de sucesso
+
                 if (data.message && data.message === "Reserva inserida com sucesso!") {
                     alert('✅ Reserva inserida com sucesso!');
                 } else {
@@ -203,7 +201,6 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(error => {
                 console.error('❌ Erro ao inserir a reserva:', error);
                 
-                // Exibe um alerta de erro com informações completas do erro
                 alert(`Erro ao inserir reserva: ${error.message || 'Erro desconhecido'}\nDetalhes: ${error.stack}`);
             });
         
